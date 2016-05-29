@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>appear.in</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+      }
+
+      #appearin_webview {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <webview id='appearin_webview' src='https://appear.in/' preload='webview-script.js'></webview>
+
+    <script>
+      'use strict';
+
+      const webview = document.getElementById('appearin_webview');
+
+      webview.addEventListener('dom-ready', function() {
+        this.insertCSS('header.top-line{padding-left:76px;}div.content-wrapper{width:calc(100% - 65px);float:right;}');
+      });
+
+      // Webview links that try to open in new window will open in default browser
+      webview.addEventListener('new-window', function(event) {
+        require('electron').shell.openExternal(event.url);
+      });
+    </script>
+  </body>
+</html>

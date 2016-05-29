@@ -1,0 +1,35 @@
+{
+  "name": "appear.in",
+  "productName": "appear.in",
+  "bundleId": "com.vitorgalvao.appearin",
+  "version": "0.9.0",
+  "description": "An electron app for appear.in",
+  "main": "main.js",
+  "scripts": {
+    "get-electron-version": "grep 'electron-prebuilt' package.json | perl -pe 's/.*(\\d+\\.\\d+\\.\\d+).*/\\1/'",
+    "start": "electron main.js",
+    "build": "npm run build-osx",
+    "build-osx": "electron_version=$(npm run get-electron-version | tail -1) && electron-packager . $npm_package_productName --overwrite --prune --platform=darwin --arch=x64 --version=${electron_version} --app-bundle-id=$npm_package_bundleId --app-version=$npm_package_version --icon=../icon/icon.icns",
+    "package": "npm run package-osx",
+    "package-osx": "npm run build-osx && ditto -ck --norsrc --keepParent 'appear.in-darwin-x64/appear.in.app' \"${HOME}/Desktop/appear.in-osx-$npm_package_version.zip\" && rm -r 'appear.in-darwin-x64'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorgalvao/appear.in.git"
+  },
+  "keywords": [
+    "electron",
+    "appear.in",
+    "webrtc"
+  ],
+  "author": "Vítor Galvão",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/vitorgalvao/appear.in/issues/"
+  },
+  "homepage": "https://github.com/vitorgalvao/appear.in/",
+  "devDependencies": {
+    "electron-packager": "^7.0.1",
+    "electron-prebuilt": "^1.0.1"
+  }
+}
