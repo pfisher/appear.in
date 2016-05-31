@@ -1,8 +1,8 @@
 {
   "name": "appear.in",
   "productName": "appear.in",
-  "bundleId": "com.vitorgalvao.appearin",
-  "version": "0.9.0",
+  "bundleId": "com.vitorgalvao.appear.in",
+  "version": "1.0.0",
   "description": "An electron app for appear.in",
   "main": "main.js",
   "scripts": {
