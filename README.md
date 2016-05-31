@@ -1,8 +1,14 @@
-# <img src='https://i.imgur.com/xzPZ3rf.png' width='45' align='left' alt='appear.in logo'>appear.in (unofficial app)
+# <img src='https://i.imgur.com/xzPZ3rf.png' width='45' align='left' alt='appear.in logo'>appear.in (unofficial)
 
 Use [appear.in](https://appear.in/) just like you do in your browser, but as a desktop app. This app will also notify you in its icon when messages are received.
 
 <img src='https://i.imgur.com/OcSOiEi.jpg' alt='appear.in screenshot'>
+
+## This is an unofficial app
+
+The appear.in team has been gracious enough to [allow me to use their name and logo on this app](https://github.com/vitorgalvao/appear.in/pull/1), but it is still unofficial. I will retire this app if an official one is ever released.
+
+If you find any issues or have suggestions/requests for the app (as opposed to appear.in’s website), please **do not bother the appear.in team directly** but instead [open an issue](https://github.com/vitorgalvao/appear.in/issues/new).
 
 ## Install
 
