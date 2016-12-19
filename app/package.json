@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/vitorgalvao/appear.in/",
   "devDependencies": {
-    "electron-packager": "^7.0.1",
-    "electron-prebuilt": "^1.0.1"
+    "electron-packager": "^8.4.0",
+    "electron-prebuilt": "^1.4.12"
   }
 }
