@@ -3,7 +3,7 @@
   "productName": "appear.in",
   "bundleId": "com.vitorgalvao.appear.in",
   "version": "1.0.0",
-  "description": "An electron app for appear.in",
+  "description": "Unofficial appear.in app",
   "main": "main.js",
   "scripts": {
     "get-electron-version": "grep 'electron-prebuilt' package.json | perl -pe 's/.*(\\d+\\.\\d+\\.\\d+).*/\\1/'",
