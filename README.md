@@ -12,7 +12,7 @@ If you find any issues or have suggestions/requests for the app (as opposed to a
 
 ## Install
 
-[Download the lastest version](https://github.com/vitorgalvao/appear.in/releases), or run `brew cask install appearin` if you use [homebrew](http://brew.sh/).
+[Download the latest version](https://github.com/vitorgalvao/appear.in/releases), or run `brew cask install appearin` if you use [homebrew](http://brew.sh/).
 
 ## Development
 
