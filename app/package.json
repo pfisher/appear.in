@@ -1,17 +1,22 @@
 {
   "name": "appear.in",
-  "productName": "appear.in",
-  "bundleId": "com.vitorgalvao.appear.in",
   "version": "1.0.0",
   "description": "Unofficial appear.in app",
+  "build": {
+    "appId": "com.vitorgalvao.appear.in",
+    "productName": "appear.in",
+    "mac": {
+      "target": "zip",
+      "icon": "../icon/icon.icns"
+    }
+  },
   "main": "main.js",
   "scripts": {
-    "get-electron-version": "grep 'electron-prebuilt' package.json | perl -pe 's/.*(\\d+\\.\\d+\\.\\d+).*/\\1/'",
     "start": "electron main.js",
     "build": "npm run build-macos",
-    "build-macos": "electron_version=$(npm run get-electron-version | tail -1) && electron-packager . $npm_package_productName --overwrite --prune --platform=darwin --arch=x64 --version=${electron_version} --app-bundle-id=$npm_package_bundleId --app-version=$npm_package_version --icon=../icon/icon.icns",
+    "build-macos": "electron-builder --dir",
     "package": "npm run package-macos",
-    "package-macos": "npm run build-macos && ditto -ck --norsrc --keepParent 'appear.in-darwin-x64/appear.in.app' \"${HOME}/Desktop/appear.in-macos-$npm_package_version.zip\" && rm -r 'appear.in-darwin-x64'"
+    "package-macos": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -29,7 +34,7 @@
   },
   "homepage": "https://github.com/vitorgalvao/appear.in/",
   "devDependencies": {
-    "electron-packager": "^8.4.0",
-    "electron-prebuilt": "^1.4.12"
+    "electron": "^1.8.2",
+    "electron-builder": "^20.2.0"
   }
 }
