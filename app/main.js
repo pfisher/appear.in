@@ -56,7 +56,7 @@ const template = [
 ];
 
 function focus_webview() {
-  mainWindow.webContents.executeJavaScript('document.getElementById("appearin_webview").focus();');
+  mainWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').focus();');
 }
 
 // Setting app notifications.
