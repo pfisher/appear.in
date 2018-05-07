@@ -50,10 +50,6 @@ const template = [
   }
 ];
 
-function focus_webview() {
-  mainWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').focus();');
-}
-
 // Setting app notifications.
 ipcMain.on('unread', function (event, args) {
   let unreadMessages;
@@ -72,13 +68,11 @@ ipcMain.on('unread', function (event, args) {
 
 app.on('browser-window-focus', function () {
   app.dock.setBadge('');
-  focus_webview();
 });
 
 app.on('ready', function () {
   mainWindow = new BrowserWindow({ width: 1000, height: 540, titleBarStyle: 'hidden-inset' });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
-  focus_webview();
 
   // Set menu
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
