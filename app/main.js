@@ -19,7 +19,7 @@ const template = [
       { label: 'Hide ' + name, accelerator: 'Command+H', role: 'hide' },
       { label: 'Hide Others', accelerator: 'Command+Shift+H', role: 'hideothers' },
       { type: 'separator' },
-      { label: 'Quit', accelerator: 'Command+Q', click: function() {app.quit();} }
+      { label: 'Quit', accelerator: 'Command+Q', click: function () { app.quit(); } }
     ]
   }, {
     label: 'Edit',
@@ -35,7 +35,7 @@ const template = [
   }, {
     label: 'View',
     submenu: [
-      { label: 'Reload', accelerator: 'Command+R', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').reload()');} }
+      { label: 'Reload', accelerator: 'Command+R', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').reload()'); } }
     ]
   }, {
     label: 'Window',
@@ -48,9 +48,9 @@ const template = [
     label: 'Help',
     role: 'help',
     submenu: [
-      { label: 'View Website', click: function() { require('electron').shell.openExternal(appWebsite) } },
+      { label: 'View Website', click: function () { require('electron').shell.openExternal(appWebsite) } },
       { type: 'separator' },
-      { label: 'Toggle Developer Tools', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.toggleDevTools();} }
+      { label: 'Toggle Developer Tools', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.toggleDevTools(); } }
     ]
   }
 ];
@@ -60,7 +60,7 @@ function focus_webview() {
 }
 
 // Setting app notifications.
-ipcMain.on('unread', function(event, args) {
+ipcMain.on('unread', function (event, args) {
   let unreadMessages;
 
   if (args === '0') {
@@ -69,19 +69,19 @@ ipcMain.on('unread', function(event, args) {
     unreadMessages = args;
   }
 
-  if (! mainWindow.isFocused()) {
+  if (!mainWindow.isFocused()) {
     app.dock.bounce();
     app.dock.setBadge(unreadMessages);
   }
 });
 
-app.on('browser-window-focus', function() {
+app.on('browser-window-focus', function () {
   app.dock.setBadge('');
   focus_webview();
 });
 
-app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 1000, height: 596, titleBarStyle: 'hidden-inset'});
+app.on('ready', function () {
+  mainWindow = new BrowserWindow({ width: 1000, height: 596, titleBarStyle: 'hidden-inset' });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
   focus_webview();
 
@@ -89,11 +89,11 @@ app.on('ready', function() {
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
   // Prevent app from exiting (hide it instead) when window is closed (i.e. when we press the red close button).
-  mainWindow.on('close', function(event) {
+  mainWindow.on('close', function (event) {
     event.preventDefault();
     mainWindow.hide();
     app.focus();
   });
-  app.on('before-quit', function() { app.exit(0); });
-  app.on('activate', function() { mainWindow.show(); });
+  app.on('before-quit', function () { app.exit(0); });
+  app.on('activate', function () { mainWindow.show(); });
 });
