@@ -1,13 +1,8 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
-const ipcMain = electron.ipcMain;
-
+const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 let mainWindow;
 
 // Main app menu
-const Menu = electron.Menu;
-const name = electron.app.getName();
+const name = app.getName();
 const webviewId = 'appearin_webview';
 const appWebsite = 'https://github.com/vitorgalvao/appear.in/';
 const template = [
