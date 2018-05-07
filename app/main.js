@@ -81,7 +81,7 @@ app.on('browser-window-focus', function () {
 });
 
 app.on('ready', function () {
-  mainWindow = new BrowserWindow({ width: 1000, height: 596, titleBarStyle: 'hidden-inset' });
+  mainWindow = new BrowserWindow({ width: 1000, height: 540, titleBarStyle: 'hidden-inset' });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
   focus_webview();
 
