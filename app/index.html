@@ -28,6 +28,10 @@
 
       webview.addEventListener('dom-ready', function() {
         this.insertCSS('header.top-line{padding-left:76px;}div.content-wrapper{width:calc(100% - 65px);float:right;}');
+
+        // Focus on the room name input field
+        this.focus();
+        this.executeJavascript('document.querySelector("input.input--1ntNM.jstest-urlbar-input").focus();')
       });
 
       // Webview links that try to open in new window will open in default browser
