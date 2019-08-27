@@ -1,11 +1,6 @@
-To support my continued open-source work, pick a method:
+# This repository is DEPRECATED
 
-[<img src='https://upload.wikimedia.org/wikipedia/commons/5/53/PayPal_2014_logo.svg' height='18' alt='Support via Paypal'>](https://www.paypal.me/vitorgalvao)&nbsp;&nbsp;
-[<img src='https://dl.dropboxusercontent.com/s/y3pft1fbmer5v22/society6.svg' height='19' alt='Support via Society6'>](https://vitorgalvao.com/society6)
-
-To support [appear.in](https://appear.in/), authors of the website, see their premium offerings:
-
-[<img src='https://dl.dropboxusercontent.com/s/suezj117j0cggq0/appear.in.svg' height='28' alt='appear.in premium'>](https://appear.in/information/premium/)
+It will no longer receive updates, but it was working without any issues when it was abandoned. It may still work for you.
 
 # <img src='https://i.imgur.com/xzPZ3rf.png' width='45' align='left' alt='appear.in logo'>appear.in (unofficial)
 
